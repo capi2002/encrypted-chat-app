@@ -25,7 +25,7 @@ def receive_messages(sock):
 
 def main():
     global aes_key
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #creates socket and immedialy connects to the server on port 5555
     sock.connect(("127.0.0.1", 5555))
 
     # Receive RSA Public Key
@@ -37,7 +37,7 @@ def main():
     from crypto_utils import generate_aes_key
     aes_key = generate_aes_key()
     encrypted_key = encrypt_with_rsa(public_key, aes_key)
-    sock.send(struct.pack('>I', len(encrypted_key)))
+    sock.send(struct.pack('>I', len(encrypted_key)))  #using struct.pack to fiz the padding issue
     sock.send(encrypted_key)
     print("[+] AES key generated and sent securely.")
 
