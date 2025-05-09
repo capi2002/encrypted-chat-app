@@ -29,7 +29,7 @@ A Python-based secure chat application using UDP sockets with hybrid encryption 
 - server.py
 - client.py
 - crypto_utils.py
-**You’ll need at least 3 terminal windows:**
+## **You’ll need at least 3 terminal windows:**
 - Terminal 1: Start the server by using the command "python3 server.py on the terminal"
 - Terminal 2: Start the first client by using the command "python3 client.py"
 - Terminal 3: Start client 2 by using the same command as terminal 2, "python3 client.py"
